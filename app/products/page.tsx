@@ -1,8 +1,7 @@
 import React from "react";
-import ProductCard from "../components/products/Products";
 
 const page = () => {
-  return <ProductCard />;
+  return <>Cards</>;
 };
 
 export default page;
