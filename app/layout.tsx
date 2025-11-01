@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { Inter } from "next/font/google";
+import ThemeToggle from "./components/theme/ThemeToggle";
+
+const inter = Inter({ subsets: ["latin"] });
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,10 +30,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        className={`${inter.className} bg-white text-black dark:bg-gray-900 dark:text-white transition-colors`}
+      >
+        <ThemeToggle />
+        {children}
+      </body>
+
+      {/* <html lang="en">
+      <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
+    </html> */}
     </html>
   );
 }
