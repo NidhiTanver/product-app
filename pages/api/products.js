@@ -1,4 +1,5 @@
-export async function GET() {
+// pages/api/products.js
+export default function handler(req, res) {
   const products = [
     {
       id: 0,
@@ -89,6 +90,5 @@ export async function GET() {
         "https://productimages.hepsiburada.net/s/1/280-413/9502147641394.jpg?v1",
     },
   ];
-
-  return Response.json(products);
+  res.status(200).json(products);
 }
